@@ -33,7 +33,7 @@ export const FeedNewsPage = () => {
                         alt="news icon"
                         unoptimized
                     />
-                    <h1>רשימת החדשות של רן בר-זיק</h1>
+                    <h1>{"רשימת החדשות של רן בר-זיק"}</h1>
                 </div>
             </header>
             <div className="main-container" dir="rtl">
@@ -78,7 +78,7 @@ export const FeedNewsPage = () => {
                                     height={30}
                                     alt="news icon"
                                 />
-                                <p className="placeholder">לא נבחרה חדשה, לבחירה לחץ על החדשה הרצויה</p>
+                                <p className="placeholder">{"לא נבחרה חדשה, לבחירה לחץ על החדשה הרצויה"}</p>
                             </div>
                         )
                     }
