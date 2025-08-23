@@ -1,6 +1,6 @@
 import './App.css';
 import {Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { FeedNewsPage } from './Components/FeedNewsPage';
+import { FeedNewsPage } from './Pages/FeedNewsPage';
 
 function App() {
   return (

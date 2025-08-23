@@ -5,20 +5,17 @@ import './FeedNewsPage.css';
 export const FeedNewsPage = () => {
     const [news, setNews] = useState(null);
     const [selectedNew, setSelectedNew] = useState(null);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const result = await axiosInstance.get('/RSSFeed');
                 setNews(result.data);
-                setLoading(false);
             } catch (error) {
                 console.log("Error fetching news:", error);
             }
         };
         fetchData();
-        console.log(loading);
     }, []);
 
     const handleClose = () => {
@@ -40,28 +37,27 @@ export const FeedNewsPage = () => {
                 </div>
             </header>
             <div className="main-container" dir="rtl">
-                
-                    <div className="news-container">
-                        {
-                            news && news.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className={`news-item ${selectedNew === item ? 'active' : ''}`}
-                                    onClick={() => setSelectedNew(item)}
-                                >
-                                    <div className="title-container">
-                                        <img
-                                            src="/hand-point-left-svgrepo-com.svg"
-                                            width={30}
-                                            height={30}
-                                            alt="news icon"
-                                        />
-                                        <p>{item.title}</p>
-                                    </div>
+                <div className="news-container">
+                    {
+                        news && news.map((item, index) => (
+                            <div
+                                key={index}
+                                className={`news-item ${selectedNew === item ? 'active' : ''}`}
+                                onClick={() => setSelectedNew(item)}
+                            >
+                                <div className="title-container">
+                                    <img
+                                        src="/hand-point-left-svgrepo-com.svg"
+                                        width={30}
+                                        height={30}
+                                        alt="news icon"
+                                    />
+                                    <p>{item.title}</p>
                                 </div>
-                            ))
-                        }
-                    </div>
+                            </div>
+                        ))
+                    }
+                </div>
                 <div className="news">
                     {
                         selectedNew ? (
